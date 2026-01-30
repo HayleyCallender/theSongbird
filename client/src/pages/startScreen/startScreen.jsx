@@ -1,18 +1,28 @@
 // StartScreen.jsx
 import { useNavigate } from "react-router-dom";
-import leaf from "../../assets/leaf.png";
 import { useSound } from "../../contexts/SoundContext";
 import { useEffect, useRef, useState } from "react";
 import "./startScreen.css";
 import { motion } from "framer-motion";
-import leavesFull from "../../assets/leavesFull.png";
-import leavesLeft from "../../assets/leavesL.png";
-import leavesRight from "../../assets/leavesR.png";
-import rustle from "../../assets/rustle.mp3";
-import rustleQuiet from "../../assets/rustleQuietHover.mp3";
-import secretGardenDoor from "../../assets/secretGardenDoorSquare.png";
-import songbirdLogo from "../../assets/theSongbirdLogo.png";
 import Loading from "../../components/loading.jsx";
+const leaf =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/v1769788777/leaf_q4r7mv.png";
+const leavesFull =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769088452/leavesFull_x40uwf.png";
+const leavesLeft =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788791/leavesL_t9ayks.png";
+const leavesRight =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788789/leavesR_svc0g6.png";
+const rustle =
+    "https://res.cloudinary.com/djajtxjpr/video/upload/v1769788759/rustle_b7yccz.mp3";
+const rustleQuiet =
+    "https://res.cloudinary.com/djajtxjpr/video/upload/v1769788760/rustleQuietHover_qxiotc.mp3";
+const secretGardenDoor =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788799/secretGardenDoorSquare_hjekhq.png";
+const songbirdLogo =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769790379/theSongbirdLogo_jpuiqp.png";
+const town =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788807/townExtended-4_ee2t87.png";
 
 function StartScreen({ onEnter }) {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -32,6 +42,7 @@ function StartScreen({ onEnter }) {
         preLoadImage(leavesRight);
         preLoadImage(secretGardenDoor);
         preLoadImage(songbirdLogo);
+        preLoadImage(town);
 
         //preload sounds
 
@@ -76,7 +87,7 @@ function StartScreen({ onEnter }) {
                     </div>
                 </>
             ) : (
-               <Loading />
+                <Loading />
             )}
         </div>
     );

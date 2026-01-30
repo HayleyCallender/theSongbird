@@ -1,21 +1,19 @@
 import "./hotspots.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import "./ogruRecords.css";
 import "../../fonts/fonts.css";
 import About from "./about.jsx";
 import Designs from "./designs.jsx";
 import "./songbirdDesigns.css";
 import Typewriter from "../../components/typewriter.jsx";
-import Loading from '../../components/loading.jsx';
+import Loading from "../../components/loading.jsx";
 import Button from "../../components/button.jsx";
 import BackToTop from "../../components/backToTop/backToTop.jsx";
-import Nav from '../../components/nav.jsx';
+import Nav from "../../components/nav.jsx";
 import "../townscene/townscene.css";
 import "../home/home.css";
 //import UseImagePreloader from '../../components/useImagePreloader.jsx';
-
 
 const designOptionCards = [
     {
@@ -40,19 +38,19 @@ function SongbirdDesigns() {
     const [showingProjects, setShowingProjects] = useState(false);
     //const bgImageUrl = 'https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto,w_1920/v1769088583/SongbirdDesigns_jito0m.png';
     //const imageLoaded = UseImagePreloader(bgImageUrl);
-    
 
-    const handleGreetingComplete = () => {  //STORING LOCAL STORAGE GREETINGS
+    const handleGreetingComplete = () => {
+        //STORING LOCAL STORAGE GREETINGS
         setComplete(true);
         localStorage.setItem("greetingComplete", "true");
-      };
+    };
 
-      useEffect(() => {
+    useEffect(() => {
         const stored = localStorage.getItem("greetingComplete"); //RETRIEVING GREETINGS STATE
         if (stored === "true") {
-          setComplete(true);
+            setComplete(true);
         }
-      }, []);
+    }, []);
 
     // When they click the button
     const handleShowProjects = () => {
@@ -69,15 +67,13 @@ function SongbirdDesigns() {
 
     return (
         <motion.div
-            className="page scrollbar-hide" //main page 
+            className="page scrollbar-hide" //main page
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="designContainer" 
-            
-            >
+            <div className="designContainer">
                 <motion.div
                     className="backdrop scrollbar-hide"
                     initial={{ y: 500 }}
@@ -163,29 +159,32 @@ function SongbirdDesigns() {
 
 function Greetings({ setComplete, complete }) {
     return (
-        <>{complete ? (
-            <motion.div className="greetings">
-                <motion.h1 className="ogruTitle">Songbird Designs</motion.h1>
-                <h2
-                    className="ogruText"
-                >Hi, Welcome back</h2>
-            </motion.div>
+        <>
+            {complete ? (
+                <motion.div className="greetings">
+                    <motion.h1 className="ogruTitle">
+                        Songbird Designs
+                    </motion.h1>
+                    <h2 className="ogruText">Hi, Welcome back</h2>
+                </motion.div>
             ) : (
-            <motion.div className="greetings">
-                <motion.h1 className="ogruTitle">Songbird Designs</motion.h1>
-                <Typewriter
-                    lines={[
-                        " Welcome to Songbird Designs. ",
-                        " Read about my experiences or browse the projects.",
-                    ]}
-                    speed={70}
-                    pauseBetween={200}
-                    className="ogruText"
-                    onComplete={() => {
-                        setComplete(true);
-                    }} // trigger when typing is complete
-                />
-            </motion.div>
+                <motion.div className="greetings">
+                    <motion.h1 className="ogruTitle">
+                        Songbird Designs
+                    </motion.h1>
+                    <Typewriter
+                        lines={[
+                            " Welcome to Songbird Designs. ",
+                            " Read about my experiences or browse the projects.",
+                        ]}
+                        speed={70}
+                        pauseBetween={200}
+                        className="ogruText"
+                        onComplete={() => {
+                            setComplete(true);
+                        }} // trigger when typing is complete
+                    />
+                </motion.div>
             )}
         </>
     );

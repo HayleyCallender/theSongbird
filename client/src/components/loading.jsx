@@ -1,6 +1,7 @@
 import "../pages/startScreen/startScreen.css";
 import { motion } from "framer-motion";
-import songbirdLogo from "../assets/theSongbirdLogo.png";
+const songbirdLogo =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769790379/theSongbirdLogo_jpuiqp.png";
 
 function Loading() {
     return (

@@ -1,9 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import snail from "../assets/snail.png";
 import "../pages/townscene/townscene.css";
-
+const snail =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788776/snail_iviig0.png";
 
 function Snail2() {
     //console.log("Snail2 rendering!");
@@ -13,7 +12,6 @@ function Snail2() {
         //console.log("navigate to..:", navigate);
         navigate("/snailBait");
     };
-
 
     return (
         <AnimatePresence>

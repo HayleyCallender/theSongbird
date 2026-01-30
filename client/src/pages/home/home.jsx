@@ -1,14 +1,30 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import leavesLeft from "../../assets/leavesL.png";
-import leavesRight from "../../assets/leavesR.png";
-import leavesFull from "../../assets/leavesFull.png";
-import secretGardenDoorSquare from "../../assets/secretGardenDoorSquare.png";
-import redLeaf from "../../assets/redLeaf.png";
 import "../home/home.css";
-import rustleSound from "../../assets/rustle.mp3";
-import rustleQuietHover from "../../assets/rustleQuietHover.mp3";
+//Image URLS preloaded on start screen
+const leavesLeft =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788791/leavesL_t9ayks.png";
+
+const leavesRight =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788789/leavesR_svc0g6.png";
+
+const leavesFull =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769088452/leavesFull_x40uwf.png";
+
+const secretGardenDoorSquare =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788799/secretGardenDoorSquare_hjekhq.png";
+
+const rustleSound =
+    "https://res.cloudinary.com/djajtxjpr/video/upload/v1769788759/rustle_b7yccz.mp3";
+
+const rustleQuietHover =
+    "https://res.cloudinary.com/djajtxjpr/video/upload/v1769788760/rustleQuietHover_qxiotc.mp3";
+
+const redLeaf =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788765/redLeaf_zfqfy1.png";
+
+//bird sound context
 import { useSound } from "../../contexts/SoundContext";
 
 function Home() {

@@ -1,8 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
-import banner from "../assets/birdBanner.png";
 import "../pages/townscene/townscene.css";
-import birdFlying from "../assets/birdflying.mp3";
+
+const banner =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/f_auto,q_auto/v1769788747/birdBanner_frlv8e.png";
+const birdFlying =
+    "https://res.cloudinary.com/djajtxjpr/video/upload/v1769788769/birdflying_dsbmrc.mp3";
 
 function Bird2() {
     //tr

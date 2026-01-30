@@ -1,4 +1,3 @@
-import town from "../../assets/townExtended-4.png";
 import "./townscene.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -8,10 +7,16 @@ import Bird2 from "../../components/bird2.jsx";
 import Snail2 from "../../components/snail2.jsx";
 import Loading from "../../components/loading.jsx";
 import DropLeaves from "../../components/dropLeaves.jsx";
-import gust from "../../assets/gustOwind.mp3";
-import leaf from "../../assets/leafFall.mp3";
-import shop from "../../assets/shopDoorBellOpenClose.mp3";
 import { useSound } from "../../contexts/SoundContext";
+
+const town =
+    "https://res.cloudinary.com/djajtxjpr/image/upload/v1769788807/townExtended-4_ee2t87.png";
+const gust =
+    "https://res.cloudinary.com/djajtxjpr/video/upload/v1769788753/gustOwind_c4dhy5.mp3";
+const leaf =
+    "https://res.cloudinary.com/djajtxjpr/video/upload/v1769788754/leafFall_uiae0c.mp3";
+const shop =
+    "https://res.cloudinary.com/djajtxjpr/video/upload/v1769788764/shopDoorBellOpenClose_hu6wn8.mp3";
 
 const hotspots = [
     { id: "ogruRecords", label: "Ogru Records", position: "20%" },
@@ -234,12 +239,14 @@ function HotspotButton({
                 {hasAppeared && (
                     <motion.button
                         className="leafButton"
-                        whileFocus={{scale: [1, 1.4, 1],
+                        whileFocus={{
+                            scale: [1, 1.4, 1],
                             rotate: [0, 5, -5, 0],
                             transition: {
                                 duration: 2,
                                 repeat: Infinity,
-                        },  }}
+                            },
+                        }}
                         whileHover={{
                             scale: [1, 1.4, 1],
                             rotate: [0, 5, -5, 0],
