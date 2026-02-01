@@ -18,3 +18,7 @@ logs
 .vercel
 /generated
 .DS_Store
+
+# Files
+
+/assets

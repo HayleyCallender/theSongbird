@@ -15,11 +15,10 @@ import Nav from "../components/nav.jsx";
 import Loading from "../components/loading.jsx";
 
 function Show() {
-
     const audioRef = useRef(null);
     const { selectedRecord } = useRecord(); //which design, site or record has been selected to show more info
     const [isLoading, setIsLoading] = useState(true);
-    const [isPlaying, setIsPlaying] = useState(false); 
+    const [isPlaying, setIsPlaying] = useState(false);
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
@@ -39,7 +38,7 @@ function Show() {
 
     //AUDIO ELEMENTS
     useEffect(() => {
-       if (!selectedRecord?.audioUrl) return;
+        if (!selectedRecord?.audioUrl) return;
 
         audioRef.current = new Audio(selectedRecord?.audioUrl);
         audioRef.volume = 0.5;
@@ -48,8 +47,8 @@ function Show() {
         return () => {
             audioRef.current.pause();
             audioRef.current = null;
-        }
-    }, [selectedRecord])
+        };
+    }, [selectedRecord]);
 
     function togglePlayPause() {
         const audio = audioRef.current;
@@ -264,7 +263,7 @@ function Show() {
                             </Card>
                         )}
                         {selectedRecord?.audioUrl && ( //AUDIOPLAYER
-                            <Card className="w-full h-auto grid grid-flow-row xs:grid-cols-1 sm-grid-cols-1 md:grid-cols-2 gap-4 audioCard text-nowrap">
+                            <Card className="w-full h-auto grid grid-flow-col xs:grid-cols-1 sm-grid-cols-1 md:grid-cols-2 gap-4 audioCard text-nowrap">
                                 <CardHeader className="audioCardHeader">
                                     <CardTitle className="audioCardTitle">
                                         <CardTitle className="audioCardTitlePlay">
@@ -282,7 +281,6 @@ function Show() {
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent className="w-50 h-auto audioCardContent flex justify-center">
-                               
                                     {isPlaying ? (
                                         <PauseCircleIcon
                                             className="pauseIcon p-0"
